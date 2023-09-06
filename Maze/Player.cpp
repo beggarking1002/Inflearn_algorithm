@@ -57,7 +57,17 @@ void Player::Init(Board* board)
 
 void Player::Update(uint64 deltaTick)
 {
+	if (_pathIndex >= _path.size())
+		return;
 
+	_sumTick += deltaTick;
+	if (_sumTick >= MOVE_TICK)
+	{
+		_sumTick = 0;
+
+		_pos = _path[_pathIndex];
+		_pathIndex++;
+	}
 }
 
 bool Player::CanGo(Pos pos)

@@ -23,6 +23,10 @@ private:
 	Board* _board = nullptr;
 
 	vector<Pos> _path;
-	int32 _pathindex = 0;
+	uint32 _pathIndex=0;
+	uint64 _sumTick=0;
+
+
+
 };
 
